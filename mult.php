@@ -1,3 +1,8 @@
+<?php
+$table = "<table>";
+$table .="</table>";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +10,6 @@
     <title>Multiplication Table</title>
 </head>
 <body>
-<table> </table>
+<?php echo $table; ?>
 </body>
 </html>
