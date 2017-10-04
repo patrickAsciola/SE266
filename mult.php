@@ -1,4 +1,5 @@
 <?php
+// Patrick Asciola SE266.15 10/4/17
 $table = "<table>"; // creates table
 $number = " "; // initliazes number variable as a string
 
