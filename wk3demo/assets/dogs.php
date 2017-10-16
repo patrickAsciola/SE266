@@ -22,7 +22,7 @@ function getDogsAsTable($db) {
 
             $table .="</table>";
         }else{
-            $table = "Life is sad. There is no dogs.";
+            $table = "Life is sad. There are no dogs.";
         }
         return $table;
     }catch(PDOException $e){
@@ -34,4 +34,18 @@ function getDogsAsTable($db) {
             print_r($dog);
         }
     }*/
+}
+function addDog($db, $name, $gender, $fixed)
+{
+    try{
+        $sql = $db->prepare("INSERT INTO animals VALUES (null), :name, :gender, :fixed");
+        $sql->bindParam(':name', $name);
+        $sql->bindParam(':gender', $gender);
+        $sql->bindParam(':fixed', $fixed);
+        $sql->execute();
+        return $sql->rowCount();
+    }catch(PDOException $e){
+        die("There was a problem inserting the dog into the database");
+    }
+
 }
