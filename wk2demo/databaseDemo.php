@@ -4,7 +4,7 @@
  * User: 001351643
  * Date: 10/11/2017
  * Time: 1:22 PM
- */
+  */
 $dsn = "mysql:host=localhost;dbname=dogs";
 $username = "dogs";
 $password = "se266";
@@ -38,3 +38,14 @@ Fixed: <input type="checkbox" name="fixed"  value="true"/>
 <br />
 <input type="submit" name="submit" value="Do it" />
 </form>
+<?php
+
+$sql = $db->prepare("SELECT * FROM animals");
+$sql->execute();
+$results = $sql->fetchAll(PDO::FETCH_ASSOC);
+if(count($results)){
+    foreach($results as $dog)
+    {
+        print_r($dog);
+    }
+}
