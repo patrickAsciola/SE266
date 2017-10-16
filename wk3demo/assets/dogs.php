@@ -38,7 +38,7 @@ function getDogsAsTable($db) {
 function addDog($db, $name, $gender, $fixed)
 {
     try{
-        $sql = $db->prepare("INSERT INTO animals VALUES (null), :name, :gender, :fixed");
+        $sql = $db->prepare("INSERT INTO animals VALUES (null, :name, :gender, :fixed)");
         $sql->bindParam(':name', $name);
         $sql->bindParam(':gender', $gender);
         $sql->bindParam(':fixed', $fixed);
