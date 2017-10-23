@@ -8,7 +8,7 @@ require_once ("assets/viewNames.php");
 
 <?php
 $db = dbConn();
-echo getActorsAsTable($db);
+echo getNamesTable($db);
 include_once ("assets/footer.php");
 ?>
 
