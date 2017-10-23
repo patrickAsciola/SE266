@@ -7,7 +7,7 @@
  */
 function addActor($db, $firstname, $lastname, $dob, $height)
 {
-    try{
+    try {
         $sql = $db->prepare("INSERT INTO actors VALUES (null, :firstname, :lastname, :dob, :height)");
         $sql->bindParam(':firstname', $firstname);
         $sql->bindParam(':lastname', $lastname);
@@ -15,8 +15,7 @@ function addActor($db, $firstname, $lastname, $dob, $height)
         $sql->bindParam(':height', $height);
         $sql->execute();
         return $sql->rowCount();
-    }catch(PDOException $e){
+    } catch (PDOException $e) {
         die("There was a problem inserting the dog into the database");
     }
-
 }
