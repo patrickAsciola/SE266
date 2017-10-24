@@ -8,7 +8,7 @@
 function addCorp($db, $corp, $incorp_dt, $email, $zipcode, $owner, $phone)
 {
     try {
-        $sql = $db->prepare("INSERT INTO actors VALUES (null, :corp, :incop_dt, :email, :zipcode, :owner. :phone)");
+        $sql = $db->prepare("INSERT INTO corps VALUES (null, :corp, :incop_dt, :email, :zipcode, :owner. :phone)");
         $sql->bindParam(':corp', $corp);
         $sql->bindParam(':incorp_dt', $incorp_dt);
         $sql->bindParam(':email', $email);
