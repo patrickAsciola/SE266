@@ -9,7 +9,7 @@ require_once ("assets/viewNames.php");
 <?php
 $db = dbConn();
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING) ?? "work";
-echo $id . getaName($db, $id);
+echo  getaName($db, $id);
 include_once ("assets/addForm.php");
 include_once ("assets/footer.php");
 ?>

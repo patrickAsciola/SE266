@@ -7,12 +7,12 @@
  */?>
 <form method="post" action="#">
     Corporation Name: <input type="text" name="corp" /> <br />
-    Corporation Initiliazation date: <input type="date" name="dob" /> <br />
-    Email: <input type="text" name="emaile" /> <br />
+    Corporation Initiliazation date: <input type="date" name="incorp_dt" /> <br />
+    Email: <input type="text" name="email" /> <br />
     Zip code: <input type="text" name="zipcode" /> <br />
     Owner: <input type="text" name="owner" /> <br />
     Phone: <input type="text" name="phone" /> <br />
 
     <br />
-    <input type="submit" name="action" value="update" />
+    <input type="submit" name="action" value="Add" />
 </form>
