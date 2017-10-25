@@ -7,7 +7,6 @@
  */?>
 <form method="post" action="#">
     Corporation Name: <input type="text" name="corp" /> <br />
-    Corporation Initiliazation date: <input type="date" name="incorp_dt" /> <br />
     Email: <input type="text" name="email" /> <br />
     Zip code: <input type="text" name="zipcode" /> <br />
     Owner: <input type="text" name="owner" /> <br />

@@ -4,13 +4,12 @@ function getNamesTable($db)
 try {
 $sql = $db->prepare("SELECT * FROM corps");
 $sql->execute();
-$id = 0;
 $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
 if ($sql->rowCount() > 0) {
 $table = "<table>" . PHP_EOL;
     foreach ($corps as $corp) {
     $table .= "<tr><td>" . $corp['corp']  .  " <a href='read.php?id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?id=" . $corp['id'] . "'>Delete</a>";
-    $id = $corp['id'];
+    //$id = $corp['id'];
     $table .= "</td></tr>";
     }
 
