@@ -25,15 +25,16 @@ function addCorp($db, $corp, $email, $zipcode, $owner, $phone)
 }
 
 
-function addDog($db, $name, $gender, $fixed) {
+function delCorp($db, $id)
+{
     try {
-        $sql = $db->prepare("INSERT INTO dogs VALUES (null, :name, :gender, :fixed)");
-        $sql->bindParam(':name', $name);
-        $sql->bindParam(':gender', $gender);
-        $sql->bindParam(':fixed', $fixed);
+        $sql = $db->prepare("DELETE FROM corps WHERE id = :id");
+        $sql->bindParam(':id', $id, PDO::PARAM_INT);
         $sql->execute();
-        return $sql->rowCount();
+
+        return $id;
     } catch (PDOException $e) {
-        die("The was problem adding the dog.");
+        die("There was a problem deleting the dog.");
     }
 }
+

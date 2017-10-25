@@ -8,8 +8,8 @@ $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
 if ($sql->rowCount() > 0) {
 $table = "<table>" . PHP_EOL;
     foreach ($corps as $corp) {
-    $table .= "<tr><td>" . $corp['corp']  .  " <a href='read.php?id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?id=" . $corp['id'] . "'>Delete</a>";
-    //$id = $corp['id'];
+    $table .= "<tr><td>" . $corp['corp']  .  " <a href='read.php?action=read&id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?action=update&id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?action=delete&id=" . $corp['id'] . "'>Delete</a>";
+
     $table .= "</td></tr>";
     }
 
@@ -34,14 +34,20 @@ function getAName($db, $id)
         if ($sql->rowCount() > 0) {
             $table = "<table>" . PHP_EOL;
             foreach ($corps as $corp) {
-                $table .= "<tr><td>"  .  " <a href='read.php?id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?id=" . $corp['id'] . "'>Delete</a>";
+                $table .= "<tr><td>"  .  " <a href='read.php?action=read&id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?action=update&id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?action=delete&id=" . $corp['id'] . "'>Delete</a>";;
                 $table .= "</td></tr>";
-                $table .= "<tr><td>" . $corp['corp'];
-                $table .="</td><td>" .  $corp['incorp_dt'];
-                $table .="</td><td>" . $corp['email'];
-                $table .= "</td> <td>" .$corp['zipcode'];
-                $table .= "</td> <td>" . $corp['owner'] ;
-                $table .= "</td> <td>" . $corp['phone'];
+                $table .= "<tr><td>" . "Corporation: ". $corp['corp'];
+                $table .= "</td></tr>";
+                $table .="<tr><td>" . "Date Incorporated: ".  $corp['incorp_dt'];
+                $table .= "</td></tr>";
+                $table .="<tr><td>" . "Email: ".  $corp['email'];
+                $table .= "</td></tr>";
+                $table .= "<tr> <td>" . "Zip Code: ".$corp['zipcode'];
+                $table .= "</td></tr>";
+                $table .= "<tr> <td>" . "Owner: ". $corp['owner'] ;
+                $table .= "</td></tr>";
+                $table .= "<tr> <td>" . "Phone number: ". $corp['phone'];
+                $table .= "</td></tr>";
             }
 
             $table .= "</table>";
