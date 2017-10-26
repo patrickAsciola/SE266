@@ -37,4 +37,19 @@ function delCorp($db, $id)
         die("There was a problem deleting the dog.");
     }
 }
+/*function updateCorp($db, $corp, $email, $zipcode, $owner, $phone)
+{
+    try {
+        $sql = $db->prepare("UPDATE `dogs` SET name= :name, gender= :gender, fixed= :fixed WHERE id= :id");
+        $sql->bindParam(':name', $name, PDO::PARAM_STR);
+        $sql->bindParam(':gender', $gender, PDO::PARAM_STR);
+        $sql->bindParam(':fixed', $fixed, PDO::PARAM_BOOL); // treat whatever we get as a boolean, not a string
+        $sql->bindParam(':id', $id);
+        $sql->execute();
+        return $sql->rowCount();
+    } catch (PDOException $e) {
+        die("There was problem updating the dog.");
+    }
+}
 
+*/
