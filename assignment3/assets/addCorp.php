@@ -34,22 +34,27 @@ function delCorp($db, $id)
 
         return $id;
     } catch (PDOException $e) {
-        die("There was a problem deleting the dog.");
+        die("There was a problem deleting the corp.");
     }
 }
-/*function updateCorp($db, $corp, $email, $zipcode, $owner, $phone)
+function updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone)
 {
+
     try {
-        $sql = $db->prepare("UPDATE `dogs` SET name= :name, gender= :gender, fixed= :fixed WHERE id= :id");
-        $sql->bindParam(':name', $name, PDO::PARAM_STR);
-        $sql->bindParam(':gender', $gender, PDO::PARAM_STR);
-        $sql->bindParam(':fixed', $fixed, PDO::PARAM_BOOL); // treat whatever we get as a boolean, not a string
-        $sql->bindParam(':id', $id);
+        $sql = $db->prepare("UPDATE `corps` SET corp= :corp, email= :email, zipcode= :zipcode owner= :owner, phone= :phone WHERE id= :id");
+        $sql->bindParam(':id', $id, PDO::PARAM_STR);
+        $sql->bindParam(':corp', $corp, PDO::PARAM_STR);
+        $sql->bindParam(':email', $email, PDO::PARAM_STR);
+        $sql->bindParam(':zipcode', $zipcode, PDO::PARAM_STR);
+        $sql->bindParam(':owner', $owner, PDO::PARAM_STR);
+        $sql->bindParam(':phone', $phone, PDO::PARAM_STR);
+
+
         $sql->execute();
+        echo "Account updated";
         return $sql->rowCount();
     } catch (PDOException $e) {
         die("There was problem updating the dog.");
     }
 }
 
-*/

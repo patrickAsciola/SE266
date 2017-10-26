@@ -4,23 +4,26 @@ require_once("assets/dbconn.php");
 include_once("assets/header.php");
 require_once ("assets/viewNames.php");
 require_once("assets/addCorp.php");
+?>
+<a href='index.php'>View All</a>
+<?php
+
 $db = dbConn();
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING) ?? "work";
+$button = filter_input(INPUT_POST, 'button', FILTER_SANITIZE_STRING) ?? "work";
 $corp = filter_input(INPUT_POST, 'corp', FILTER_SANITIZE_STRING) ?? "111";
-echo getaName($db, $id);
-?>
-<form method="post" action="#">
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) ?? "111";
+$zipcode = filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_STRING) ?? "11";
+$owner = filter_input(INPUT_POST, 'owner', FILTER_SANITIZE_STRING) ?? "111";
+$phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING) ?? "111";
 
-    Corporation Name: <input type="text" name="corp" value="<?php echo $corp; ?>"/>  <br />
-    Email: <input type="text" name="email" /> <br />
-    Zip code: <input type="text" name="zipcode" /> <br />
-    Owner: <input type="text" name="owner" /> <br />
-    Phone: <input type="text" name="phone" /> <br />
+echo populateField($db, $id);
+switch($button){
 
-    <br />
-    <input type="submit" name="action" value="add" />
-</form>
+    case "update";
+         updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone);
+        break;
+}
 
-<?php
 include_once ("assets/footer.php");
 ?>
