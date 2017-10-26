@@ -1,4 +1,5 @@
 <?php
+// forms all of the names in the corp into a table
 function getNamesTable($db)
 {
 
@@ -8,7 +9,7 @@ $sql->execute();
 $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
 if ($sql->rowCount() > 0) {
 $table = "<table>" . PHP_EOL;
-    foreach ($corps as $corp) {
+    foreach ($corps as $corp) { // loops through all the data in the db and creates a tables using only the name of the corps
     $table .= "<tr><td>" . $corp['corp']  .  " <a href='read.php?action=read&id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?action=update&id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?action=delete&id=" . $corp['id'] . "'>Delete</a>";
 
     $table .= "</td></tr>";
@@ -34,7 +35,7 @@ function getAName($db, $id)
         $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
         if ($sql->rowCount() > 0) {
             $table = "<table>" . PHP_EOL;
-            foreach ($corps as $corp) {
+            foreach ($corps as $corp) { // creates a table of all the info of a specific company
                 $table .= "<tr><td>"  .  " <a href='read.php?action=read&id=" . $corp['id'] . "'>Read</a>" . " <a href='update.php?action=update&id=" . $corp['id'] . "' >Update</a>" . " <a href='index.php?action=delete&id=" . $corp['id'] . "'>Delete</a>";;
                 $table .= "</td></tr>";
                 $table .= "<tr><td>" . "Corporation: ". $corp['corp'];
@@ -70,7 +71,7 @@ function populateField($db, $id)
         $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
 
             $form = "<form method= 'post'>" . PHP_EOL;
-            foreach ($corps as $corp) {
+            foreach ($corps as $corp) { // puts all of the info of  company into a form
                 $form .= "Corporation" . " " . "<input type='text' name='corp' value='" . $corp['corp'] . "' /> <br />";
                 $form .= "Email" . " " . "<input type='text' name='email' value='" . $corp['email'] . "' /> <br />";
                 $form .= "Zip Code" . " " . "<input type='text' name='zip' value='" . $corp['zipcode'] . "' /> <br />";

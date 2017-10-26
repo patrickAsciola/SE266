@@ -11,7 +11,7 @@ include_once("assets/header.php");
 require_once ("assets/viewNames.php");
 $db = dbConn();
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING) ?? "work";
-echo getaName($db, $id);
+echo getaName($db, $id); // displays the info for one corp
 include_once ("assets/footer.php");
 ?>
 

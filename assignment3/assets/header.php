@@ -6,6 +6,7 @@
  * Time: 12:02 PM
  */
 ?>
+<!-- the header for all the web pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

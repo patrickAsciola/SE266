@@ -1,4 +1,5 @@
 <?php
+// The page for adding corps, contains a form and calls to the function to add the fields to the database
 require_once("assets/dbconn.php");
 include_once("assets/header.php");
 include_once("assets/addForm.php");

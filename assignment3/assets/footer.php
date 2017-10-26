@@ -6,7 +6,7 @@
  * Time: 12:02 PM
  */
 ?>
-
+<!-- the footer for all the webpages -->
 
 </section>
 <footer> Copyright &copy; <?php echo date('Y'); ?> Pat Asciola. All rights reserved.</footer>

@@ -5,6 +5,7 @@
  * Date: 10/23/2017
  * Time: 1:11 PM
  */?>
+<!-- the form for adding a page-->
 <form method="post" action="#">
     Corporation Name: <input type="text" name="corp" />  <br />
     Email: <input type="text" name="email" /> <br />

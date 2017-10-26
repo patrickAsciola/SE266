@@ -1,6 +1,6 @@
 <?php
 /*Patrick Asciola SE66.15
- *
+ * The home page displaying all of the corps names
  */
 require_once("assets/dbconn.php");
 include_once("assets/header.php");

@@ -5,6 +5,7 @@
  * Date: 10/23/2017
  * Time: 2:58 PM
  */
+// function that adds a corporation to the database
 function addCorp($db, $corp, $email, $zipcode, $owner, $phone)
 {
     //echo "$corp, $email, $zipcode, $owner, $phone";
@@ -24,7 +25,7 @@ function addCorp($db, $corp, $email, $zipcode, $owner, $phone)
     }
 }
 
-
+// function that deletes a corp from the database
 function delCorp($db, $id)
 {
     try {
@@ -37,6 +38,7 @@ function delCorp($db, $id)
         die("There was a problem deleting the corp.");
     }
 }
+//function that updates a corp in the database
 function updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone)
 {
 
