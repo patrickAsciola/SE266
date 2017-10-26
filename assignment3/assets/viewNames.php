@@ -1,6 +1,7 @@
 <?php
 function getNamesTable($db)
 {
+
 try {
 $sql = $db->prepare("SELECT * FROM corps");
 $sql->execute();
@@ -67,23 +68,21 @@ function populateField($db, $id)
         $sql->bindParam(':id', $id);
         $sql->execute();
         $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
-        if ($sql->rowCount() > 0) {
-            $form = "<table>" . PHP_EOL;
+
+            $form = "<form method= 'post'>" . PHP_EOL;
             foreach ($corps as $corp) {
-                $form .="<form>" . "Corporation" . " " . "<input type='text' name='corp' value='" . $corp['corp'] . "' /> <br />";
+                $form .= "Corporation" . " " . "<input type='text' name='corp' value='" . $corp['corp'] . "' /> <br />";
                 $form .= "Email" . " " . "<input type='text' name='email' value='" . $corp['email'] . "' /> <br />";
                 $form .= "Zip Code" . " " . "<input type='text' name='zip' value='" . $corp['zipcode'] . "' /> <br />";
                 $form .= "Owner" . " " . "<input type='text' name='owner' value='" . $corp['owner'] . "' /> <br />";
                 $form .= "Phone Number" . " " . "<input type='text' name='phone' value='" . $corp['phone'] . "' /> <br />";
-                $form .= "<input type='submit' name='button' value='update' />";
+
 
 
             }
 
-            $form .= "</form>";
-        } else {
-            $form = "No companies in the table at this time.";
-        }
+
+
         return $form;
 
     } catch (PDOException $e) {

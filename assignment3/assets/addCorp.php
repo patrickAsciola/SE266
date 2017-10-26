@@ -41,8 +41,8 @@ function updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone)
 {
 
     try {
-        $sql = $db->prepare("UPDATE `corps` SET corp= :corp, email= :email, zipcode= :zipcode owner= :owner, phone= :phone WHERE id= :id");
-        $sql->bindParam(':id', $id, PDO::PARAM_STR);
+        $sql = $db->prepare("UPDATE `corps` SET corp= :corp, email= :email, zipcode= :zipcode, owner= :owner, phone= :phone WHERE id= :id");
+        $sql->bindParam(':id', $id, PDO::PARAM_INT);
         $sql->bindParam(':corp', $corp, PDO::PARAM_STR);
         $sql->bindParam(':email', $email, PDO::PARAM_STR);
         $sql->bindParam(':zipcode', $zipcode, PDO::PARAM_STR);
@@ -54,7 +54,7 @@ function updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone)
         echo "Account updated";
         return $sql->rowCount();
     } catch (PDOException $e) {
-        die("There was problem updating the dog.");
+        die("There was problem updating the Corporation .");
     }
 }
 

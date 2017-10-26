@@ -16,13 +16,21 @@ $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) ?? "111";
 $zipcode = filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_STRING) ?? "11";
 $owner = filter_input(INPUT_POST, 'owner', FILTER_SANITIZE_STRING) ?? "111";
 $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING) ?? "111";
+$button = filter_input(INPUT_POST, 'button', FILTER_SANITIZE_STRING) ?? "work";
 
-echo populateField($db, $id);
-switch($button){
 
-    case "update";
-         updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone);
-        break;
+        echo populateField($db, $id);
+        ?>
+    <input type='submit' name='button' value='update' /> </form>
+<?php
+echo $button;
+        switch($button){
+
+            case "update";
+                updateCorp($db, $id, $corp, $email, $zipcode, $owner, $phone);
+                break;
+
+
 }
 
 include_once ("assets/footer.php");
