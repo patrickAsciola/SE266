@@ -1,11 +1,21 @@
-<h1>Patrick Asciola Lab 5 </h1>
+<h1>Add Page</h1>
 <?php
-require_once ('assets/dbconn.php');
+/**
+ * Created by PhpStorm.
+ * User: Pat
+ * Date: 12/7/2017
+ * Time: 5:41 PM
+ */
+include ('assets/control.php');
 include_once ('assets/header.php');
 ?>
 
-<h3>Use the Add page to add new websites to the database.</h3>
-<br />
-<h3>Use the View page to view sites that have been previously added.</h3>
+<h3>This form adds a valid URL to the database.</h3>
+
+<form method="post" action="#">
+    <input type="text" placeholder="URL" name="site" value="<?php if (isset($_POST['site'])) echo $_POST['site']; ?>">
+    <input type="submit" name="action" value="Add">
+</form>
+
 <?php
 include_once ('assets/footer.php');

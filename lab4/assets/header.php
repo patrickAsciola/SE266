@@ -7,8 +7,8 @@
 <body>
 <header>
     <nav>
-        <a href="../index.php">Home</a>
-        <a href="add.php">Add</a>
+        <a href="index.php">Add</a>
+
         <a href="view.php">View</a>
 
     </nav>

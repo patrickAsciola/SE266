@@ -8,6 +8,6 @@
 require_once ('assets/dbconn.php');
 include_once ('assets/header.php');
 include_once ('assets/control.php');
-include_once ('assets/sites.php');
+include_once ('assets/links.php');
 echo getSiteNames($db);
 include_once ('assets/footer.php');
