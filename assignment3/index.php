@@ -22,7 +22,7 @@ switch($action){
         break;
 }
 echo getNamesTable($db);
-echo  " <a href='add.php?'>Create</a>";
+echo  " <a href='control.php?'>Create</a>";
 include_once ("assets/footer.php");
 ?>
 
