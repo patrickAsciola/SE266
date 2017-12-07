@@ -11,7 +11,7 @@ function viewSiteLinks($db, $id)
     $sql->bindParam(':id', $id, PDO::PARAM_INT);
     $sql->execute();
     $sites = $sql->fetchAll(PDO::FETCH_ASSOC);
-    echo "<h1>Links from ".$sites[0]['site']." on date ".$sites[0]["date"]."</h1>";
+    echo "<h1>Links from ".$sites[0]['site']." from ".$sites[0]["date"]."</h1>";
     $view = "<section><table><caption>Rows returned " . $sql->rowCount() . "</caption><tbody>";
     foreach($sites as $site){
         $view .= "<tr><td><a href='" . $site['link'] . "' target='_blank'> " . $site['link'] . " </a></td></tr>";

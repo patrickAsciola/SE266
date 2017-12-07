@@ -48,10 +48,10 @@ function addLinks($db, $id, $match){
         return $sql->rowCount();
     }
     catch (PDOException $e){
-        die("There was a problem entering data. with the message $e");
+        die("There was a problem entering the data. with  message $e");
     }
 }
-function getSiteNames($db){
+function SiteNames($db){
     try{
         $sql = $db->prepare("SELECT * FROM sites");
         $sql->execute();
@@ -69,6 +69,6 @@ function getSiteNames($db){
         }
     }
     catch (PDOException $e){
-        die("There was a problem entering data.");
+        die("There was a problem entering the data.");
     }
 }
