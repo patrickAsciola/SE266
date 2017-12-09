@@ -32,7 +32,11 @@ switch($action){
 
 
 
+
+
+
 }
+echo "<a href='index.php?action=read'>View Companies</a>";
 echo  " <a href='control.php?'>Create</a>";
 include_once ("assets/footer.php");
 ?>
