@@ -26,6 +26,11 @@ switch($action){
         delCorp($db, $id );
         echo "Corporation #" . $id . " was succesfully deleted";
         break;
+    case "search";
+        echo  searchRecord($db, $col, $term);
+        break;
+
+
 
 }
 echo  " <a href='control.php?'>Create</a>";
