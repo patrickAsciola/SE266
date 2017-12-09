@@ -5,7 +5,7 @@ include_once("assets/header.php");
 include_once("assets/addForm.php");
 require_once("assets/addCorp.php");
 ?>
-<a href='index.php'>View All</a>
+<a href='index.php?action=read'>View All</a>
 <?php
 $db = dbConn();
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? "work";
