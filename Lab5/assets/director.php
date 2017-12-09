@@ -2,9 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Pat
- * Date: 12/7/2017
- * Time: 5:15 PM
- */require_once ("assets/dbconn.php");
+ * Date: 12/8/2017
+ * Time: 9:53 PM
+ */
+require_once ("assets/dbconn.php");
 include_once ("assets/links.php");
 include_once ("assets/viewSites.php");
 $db = dbconn();
