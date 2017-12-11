@@ -8,7 +8,7 @@
 <body>
 <div>
     <h1>Account Sign Up</h1>
-    <form action="display_results.php" method="post">
+    <form action="#" method="post">
 
         <fieldset>
             <legend>Account Information</legend>
@@ -24,15 +24,15 @@
             <legend>Settings</legend>
 
             <p>How did you hear about us?</p>
-            <input type="radio" name="heard_from" value="Search Engine" />
+            <input type="radio" name="heard" value="Search Engine" />
             Search engine<br />
-            <input type="radio" name="heard_from" value="Friend" />
+            <input type="radio" name="heard" value="Friend" />
             Word of mouth<br />
-            <input type=radio name="heard_from" value="Other" />
+            <input type=radio name="heard" value="Other" />
             Other<br />
 
             <p>Contact via:</p>
-            <select name="contact_via">
+            <select name="contact">
                 <option value="email">Email</option>
                 <option value="text">Text Message</option>
                 <option value="phone">Phone</option>
@@ -42,7 +42,7 @@
             <textarea name="comments" rows="4" cols="50"></textarea>
         </fieldset>
 
-        <input type="submit" value="Submit" />
+        <input type="submit" name="action" value="add" />
 
     </form>
     <br />
