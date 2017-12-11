@@ -7,5 +7,7 @@
  */
 require_once('assets/dbconn.php');
 require_once('assets/functions.php');
-
+$db = dbConn();
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING) ?? "work";
+echo getaName($db, $id);
 

@@ -5,7 +5,8 @@
  * Date: 12/11/2017
  * Time: 11:32 AM
  *
- */
+ *
+ Patrick Asciola SE266.15*/
 include_once ('assets/header.php');
 include_once ('assets/body.php');
 require_once ('assets/dbconn.php');
@@ -19,7 +20,7 @@ $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING) ?? "11";
 $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING) ?? "111";
 
 switch($action) {
-    case "add";
+    case "Submit";
         addAccount($db, $email, $phone, $heard, $contact, $comments);
         break;
 }

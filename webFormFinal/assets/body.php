@@ -8,7 +8,9 @@
 <body>
 <div>
     <h1>Account Sign Up</h1>
-    <form action="#" method="post">
+    <br />
+    <a href='view.php'>View </a>
+    <form action="display_results.php?id='<?php  $id ?>'" method="post">
 
         <fieldset>
             <legend>Account Information</legend>
@@ -42,7 +44,7 @@
             <textarea name="comments" rows="4" cols="50"></textarea>
         </fieldset>
 
-        <input type="submit" name="action" value="add" />
+        <input type="submit"  name="action" value="Submit" />
 
     </form>
     <br />
