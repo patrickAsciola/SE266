@@ -10,4 +10,5 @@
     Copyright &copy; <?php echo date("Y"); ?> Patrick Asciola
 </footer>
 </body>
+</div>
 </html>

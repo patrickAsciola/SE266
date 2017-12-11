@@ -6,11 +6,12 @@
  * Time: 11:33 AM
  */?>
 <body>
-<div>
+<div class="mx-auto" style="width: 1000px;" >
     <h1>Account Sign Up</h1>
     <br />
     <a href='view.php'>View </a>
-    <form action="display_results.php?id='<?php  $id ?>'" method="post">
+    <form action="#" method="post">
+
 
         <fieldset>
             <legend>Account Information</legend>
@@ -44,9 +45,9 @@
             <textarea name="comments" rows="4" cols="50"></textarea>
         </fieldset>
 
-        <input type="submit"  name="action" value="Submit" />
+        <input type="submit" name="action" value="Submit" />
 
     </form>
     <br />
-</div>
+
 
